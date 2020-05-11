@@ -25,11 +25,9 @@
         </div>
 
         <div class="form-group questions">
-            <label for="link-to-picture">Link to Picture</label>
-            <input type="text" class="form-control" id="picture">
+            <label for="link-to-picture">Submit Picture</label>
+            <input type="file" class="form-control" id="picture">
         </div>
-
-        <!-- maybe add file for picture -->
 
         <div id="question0" class="questions">
             <h1>Question 1</h1>
@@ -118,11 +116,11 @@
                 $(dropdown).attr("id", x + "-" + i)
                 switch (i) {
                     case 1:
-                        $(newDiv).text("Strongly Disagree")
+                        $(newDiv).text("Strongly Agree")
                         break;
 
                     case 2:
-                        $(newDiv).text("Soft Disagree")
+                        $(newDiv).text("Soft Agree")
                         break;
 
                     case 3:
@@ -130,11 +128,11 @@
                         break;
 
                     case 4:
-                        $(newDiv).text("Soft Agree")
+                        $(newDiv).text("Soft Disagree")
                         break;
 
                     case 5:
-                        $(newDiv).text("Strongly Agree")
+                        $(newDiv).text("Strongly Disagree")
                         break;
 
                     default:
