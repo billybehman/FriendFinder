@@ -95,9 +95,11 @@
 
     <button id="theButton">Submit</button>
 
+    <a href="/api/friends">Api List</a>
+
     <script type="text/javascript">
 
-        // $(dropdown).prop("checked", true)
+ 
 
 
         var chosenValues = ["Billy", "Billy", "Billy", "Billy", "Billy", "Billy", "Billy", "Billy", "Billy", "Billy",]
@@ -112,7 +114,8 @@
                 var newDiv = $("<div></div>")
                 var dropdown = $("<input>")
                 $(dropdown).prop('type', 'checkbox');
-                $(dropdown).attr("class", 'checkbox' + x)
+                $(dropdown).attr("class", 'checkbox checkbox' + x)
+                $(dropdown).attr("data-question", x)
                 $(dropdown).attr("id", x + "-" + i)
                 switch (i) {
                     case 1:
@@ -153,117 +156,19 @@
         };
 
 
+       
 
-
-        $(".checkbox0").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox0").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[0] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox1").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox1").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[1] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox2").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox2").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[2] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox3").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox3").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[3] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox4").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox4").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[4] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox5").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox5").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[5] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox6").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox6").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[6] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox7").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox7").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[7] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox8").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox8").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[8] = opinion
-            console.log(chosenValues)
-        })
-
-        $(".checkbox9").on("click", function () {
-            var ID = $(this).attr("id")
-            console.log(ID)
-            var opinionArray = ID.split("")
-            var opinion = parseFloat(opinionArray[2])
-            $(".checkbox9").prop("checked", false)
-            $('#' + ID).prop("checked", true)
-            chosenValues[9] = opinion
-            console.log(chosenValues)
-        })
+            $(".checkbox").on("click", function () {
+                var ID = $(this).attr("id")
+                var questionNumber = $(this).attr("data-question")
+                console.log(ID)
+                var opinionArray = ID.split("")
+                var opinion = parseFloat(opinionArray[2])
+                $('.checkbox' + questionNumber).prop("checked", false)
+                $('#' + ID).prop("checked", true)
+                chosenValues[questionNumber] = opinion
+                console.log(chosenValues)
+            })
 
 
 
